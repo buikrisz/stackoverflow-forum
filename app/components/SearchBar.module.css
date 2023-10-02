@@ -1,0 +1,36 @@
+.searchBar {
+  height: 40px;
+  width: 100%;
+  padding: 5px;
+  background-color: #3a3a3a;
+  box-shadow: 0px 2px 3px 2px #262626;
+}
+
+.searchBox {
+  display: flex;
+  height: 30px;
+  width: 100%;
+  border: 2px solid #555;
+}
+
+.searchIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  background-color: var(--primary-bg-color);
+}
+
+.searchIcon:hover {
+  background-color: #3a3a3a;
+}
+
+.searchInput {
+  width: 100%;
+  padding-left: 5px;
+  background-color: var(--primary-bg-color);
+}
+
+.searchInput:focus {
+  outline: none;
+}
