@@ -1,3 +1,3 @@
 export const SearchCard = () => {
-  return <div>SearchCard</div>;
+  return <div >SearchCard</div>;
 };

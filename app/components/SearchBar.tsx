@@ -1,9 +1,10 @@
-import { ChangeEvent, useState, KeyboardEvent } from "react";
+import { ChangeEvent, KeyboardEvent, useContext } from "react";
 import { BiSearchAlt2 } from "react-icons/bi";
 import styles from "./SearchBar.module.css";
+import { SearchContext } from "../contexts/SearchContext";
 
 export const SearchBar = () => {
-  const [searchText, setSearchText] = useState("");
+  const { searchText, setSearchText, setSearchedTerm } = useContext(SearchContext);
 
   const onSearchTextChange = (e: ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value);
   const onEnterClicked = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -14,7 +15,10 @@ export const SearchBar = () => {
 
   const onSearchTriggered = () => {
     if (searchText != null && searchText.length > 0) {
+      setSearchedTerm(searchText);
       console.log(searchText);
+    } else {
+      setSearchedTerm(searchText);
     }
   };
 
