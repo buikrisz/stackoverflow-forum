@@ -6,6 +6,8 @@ const defaultValue: SearchContextProviderValue = {
   setSearchText: () => null,
   searchedTerm: "",
   setSearchedTerm: () => null,
+  items: [],
+  setItems: () => null,
 };
 
 export const SearchContext = createContext<SearchContextProviderValue>(defaultValue);
