@@ -65,8 +65,7 @@
 .cardText {
   max-height: 100px;
   font-size: 16px;
-  overflow: hidden; /* Hides any overflowing content */
-  text-overflow: ellipsis; /* Adds the ellipsis (...) at the end */
+  overflow: hidden;
 }
 
 .cardBottom {
