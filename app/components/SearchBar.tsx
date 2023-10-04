@@ -17,7 +17,7 @@ export const SearchBar = () => {
   const onSearchTriggered = () => {
     if (searchText != null && searchText.length > 0) {
       const searchParams = `intitle=${searchText}`;
-      const additionalParams = "&site=stackoverflow&order=desc&sort=activity";
+      const additionalParams = "&site=stackoverflow&order=desc&sort=activity&filter=withbody";
 
       fetch(`${baseUrl}?${searchParams}${additionalParams}`)
         .then((res) => res.json())

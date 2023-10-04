@@ -22,6 +22,7 @@ export type SearchResultItem = {
   question_id: number;
   tags: string[];
   title: string;
+  body: string;
   view_count: number;
 };
 
@@ -36,4 +37,17 @@ export type SearchContextProviderValue = {
 
 export type SearchContextProviderProps = {
   children: ReactNode;
+};
+
+export type SearchCardProps = {
+  title: string;
+  text: string;
+  view_count: number;
+  answer_count: number;
+  votes?: number;
+  tags?: string[];
+  ownerName?: string;
+  date?: string;
+  link?: string;
+  is_answered?: boolean;
 };

@@ -1,0 +1,88 @@
+.searchCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 200px;
+  max-height: 250px;
+  padding: 10px 0 20px 0;
+  padding-right: 100px;
+  border-top: 1px solid #555;
+}
+
+.cardInfos,
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.cardInfos {
+  align-items: flex-end;
+  width: 100px;
+}
+
+.cardVotes,
+.cardUnanswered,
+.cardAnswered,
+.cardViews {
+  font-size: 15px;
+}
+
+.cardUnanswered {
+  padding: 2px 5px;
+  color: #869c90;
+  border: 1px solid #869c90;
+  border-radius: 5px;
+}
+
+.cardAnswered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 5px;
+  color: #3c6c4d;
+  background-color: #8fd1a4;
+  border-radius: 5px;
+}
+
+.cardContent {
+  width: 85%;
+}
+
+.cardTitle {
+  font-size: 25px;
+  font-weight: 600;
+  color: #6f9abc;
+}
+
+.cardTitle:hover {
+  text-decoration: underline;
+}
+
+.cardText {
+  max-height: 100px;
+  font-size: 16px;
+  overflow: hidden; /* Hides any overflowing content */
+  text-overflow: ellipsis; /* Adds the ellipsis (...) at the end */
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  justify-self: flex-end;
+}
+
+.cardTags {
+  display: flex;
+  gap: 10px;
+}
+
+.cardTag {
+  padding: 2px 5px;
+  border-radius: 5px;
+  color: #8598a7;
+  background-color: #3c4751;
+}

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import styles from "./SearchResultsPage.module.css";
 import { SearchContext } from "../contexts/SearchContext";
+import { SearchCard } from "./SearchCard";
 
 export const SearchResultsPage = () => {
   const { searchedTerm, items = [] } = useContext(SearchContext);
@@ -15,7 +16,17 @@ export const SearchResultsPage = () => {
       </h3>
       <div className={styles.cardList}>
         {items.map((item) => (
-          <div key={item.question_id}>{item.title}</div>
+          <SearchCard
+            key={item.question_id}
+            title={item.title}
+            text={item.body}
+            answer_count={item.answer_count}
+            view_count={item.view_count}
+            ownerName={item.owner.display_name}
+            tags={item.tags}
+            link={item.link}
+            is_answered={item.is_answered}
+          />
         ))}
       </div>
     </div>
