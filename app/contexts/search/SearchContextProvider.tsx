@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { SearchContext } from "./SearchContext";
-import { SearchContextProviderProps, SearchResultItem } from "../types/SearchContext.types";
+import { SearchContextProviderProps, SearchResultItem } from "../../types/SearchContext.types";
 
 export const SearchContextProvider: FC<SearchContextProviderProps> = ({ children }) => {
   const [searchText, setSearchText] = useState("");

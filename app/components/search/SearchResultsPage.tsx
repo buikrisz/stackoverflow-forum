@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styles from "./SearchResultsPage.module.css";
-import { SearchContext } from "../contexts/SearchContext";
+import { SearchContext } from "../../contexts/search/SearchContext";
 import { SearchCard } from "./SearchCard";
 
 export const SearchResultsPage = () => {
@@ -22,7 +22,7 @@ export const SearchResultsPage = () => {
             text={item.body}
             answer_count={item.answer_count}
             view_count={item.view_count}
-            ownerName={item.owner.display_name}
+            owner={item.owner}
             tags={item.tags}
             link={item.link}
             is_answered={item.is_answered}

@@ -1,10 +1,14 @@
-import { FC } from "react";
+import { FC, useCallback, useContext } from "react";
 import { MdOutlineDone } from "react-icons/md";
-import { SearchCardProps } from "../types/SearchContext.types";
+import { SearchCardProps } from "../../types/SearchContext.types";
 import styles from "./SearchCard.module.css";
+import { SearchContext } from "../../contexts/search/SearchContext";
+import { useRouter } from "next/router";
 
 export const SearchCard: FC<SearchCardProps> = (props) => {
-  const { title, text, votes, answer_count, view_count, tags, ownerName, date, link, is_answered = false } = props;
+  const { title, text, votes, answer_count, view_count, tags, owner, date, link, is_answered = false } = props;
+
+  const router = useRouter();
 
   const formatViewCount = (view_count: number) => {
     if (view_count >= 1000) {
@@ -33,6 +37,12 @@ export const SearchCard: FC<SearchCardProps> = (props) => {
   const viewColor = {
     color: getColorForViewCount(view_count),
   };
+
+  const onProfileClick = useCallback(() => {
+    if (owner?.user_id != null) {
+      router.push(`/profile/${owner.user_id}`);
+    }
+  }, [owner?.user_id, router]);
 
   return (
     <div className={styles.searchCard}>
@@ -66,7 +76,9 @@ export const SearchCard: FC<SearchCardProps> = (props) => {
             </div>
           )}
           <div className={styles.cardDetails}>
-            <h4 className={styles.cardReporter}>{ownerName}</h4>
+            <button className={styles.cardReporter} onClick={onProfileClick}>
+              {owner?.display_name ?? ""}
+            </button>
             <h4 className={styles.date}>{date}</h4>
           </div>
         </div>

@@ -46,7 +46,7 @@ export type SearchCardProps = {
   answer_count: number;
   votes?: number;
   tags?: string[];
-  ownerName?: string;
+  owner?: Owner;
   date?: string;
   link?: string;
   is_answered?: boolean;
