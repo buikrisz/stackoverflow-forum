@@ -1,12 +1,12 @@
-import { FC, useCallback, useContext } from "react";
+import { FC, useCallback, useMemo } from "react";
 import { MdOutlineDone } from "react-icons/md";
 import { SearchCardProps } from "../../types/SearchContext.types";
 import styles from "./SearchCard.module.css";
-import { SearchContext } from "../../contexts/search/SearchContext";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
-export const SearchCard: FC<SearchCardProps> = (props) => {
-  const { title, text, votes, answer_count, view_count, tags, owner, date, link, is_answered = false } = props;
+export const SearchCard = (props: SearchCardProps) => {
+  const { title, text, votes, answer_count, view_count, tags, owner, date, link, is_answered = false, creation_date } = props;
 
   const router = useRouter();
 
@@ -44,6 +44,15 @@ export const SearchCard: FC<SearchCardProps> = (props) => {
     }
   }, [owner?.user_id, router]);
 
+  const convertedDate = useMemo(() => {
+    if (creation_date == null) return undefined;
+
+    const timestamp = creation_date.valueOf() * 1000;
+    const convertedDate = new Date(timestamp);
+
+    return convertedDate.toLocaleString();
+  }, [creation_date]);
+
   return (
     <div className={styles.searchCard}>
       <div className={styles.cardInfos}>
@@ -76,9 +85,24 @@ export const SearchCard: FC<SearchCardProps> = (props) => {
             </div>
           )}
           <div className={styles.cardDetails}>
-            <button className={styles.cardReporter} onClick={onProfileClick}>
-              {owner?.display_name ?? ""}
-            </button>
+            {owner != null && (
+              <>
+                <button className={styles.cardReporter} onClick={onProfileClick}>
+                  {owner.profile_image != null && (
+                    <Image
+                      loader={() => owner.profile_image}
+                      src={owner.profile_image}
+                      alt="profile image"
+                      className={styles.cardProfilePic}
+                      width={20}
+                      height={20}
+                    />
+                  )}
+                  {owner.display_name ?? ""}
+                </button>
+                {creation_date != null && <h3>{`asked ${convertedDate}`}</h3>}
+              </>
+            )}
             <h4 className={styles.date}>{date}</h4>
           </div>
         </div>

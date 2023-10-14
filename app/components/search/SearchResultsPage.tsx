@@ -26,6 +26,7 @@ export const SearchResultsPage = () => {
             tags={item.tags}
             link={item.link}
             is_answered={item.is_answered}
+            creation_date={item.creation_date}
           />
         ))}
       </div>

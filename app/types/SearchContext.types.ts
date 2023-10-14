@@ -50,4 +50,5 @@ export type SearchCardProps = {
   date?: string;
   link?: string;
   is_answered?: boolean;
+  creation_date?: Date;
 };

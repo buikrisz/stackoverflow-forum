@@ -89,6 +89,27 @@
   background-color: #3c4751;
 }
 
+.cardDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.cardReporter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.cardProfilePic {
+  height: 20px;
+  width: 20px;
+}
+
 @media (max-width: 1200px) {
   .searchCard {
     height: fit-content;
