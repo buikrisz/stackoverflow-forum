@@ -72,11 +72,14 @@
   display: flex;
   justify-content: space-between;
   justify-self: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .cardTags {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .cardTag {
@@ -84,4 +87,26 @@
   border-radius: 5px;
   color: #8598a7;
   background-color: #3c4751;
+}
+
+@media (max-width: 1200px) {
+  .searchCard {
+    height: fit-content;
+    max-height: unset;
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: 800px) {
+  .searchCard {
+    flex-direction: column;
+    padding-right: 0;
+  }
+
+  .cardInfos {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+  }
 }
