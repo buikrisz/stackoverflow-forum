@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 10px;
   height: 250px;
-  width: 80%;
+  width: fit-content;
 }
 
 .title {
@@ -23,4 +23,11 @@
 .item {
   height: 60px;
   width: 50%;
+}
+
+@media (max-width: 800px) {
+  .statsSection {
+    width: 100%;
+    align-items: center;
+  }
 }

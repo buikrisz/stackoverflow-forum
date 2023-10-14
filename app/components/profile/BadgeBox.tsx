@@ -61,7 +61,6 @@ export const BadgeBox = (props: BadgeBoxProps) => {
     fetch(`${BASE_URL_USERS}/${userId}/badges?${DEFAULT_PARAMS_USERS}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(">>>", data);
         setBadges(data.items);
       })
       .catch((error) => console.error(error));

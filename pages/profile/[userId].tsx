@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
+import { Badges, Stats, Tags } from "@/app/components/profile";
 import { BASE_URL_USERS, DEFAULT_PARAMS_USERS } from "@/app/constants/api";
-import { Answers, Badges, Communities, Stats, Tags } from "@/app/components/profile";
 import { FaBirthdayCake } from "react-icons/fa";
 import styles from "@/app/styles/profile.module.css";
 import "../../app/styles/globals.css";
@@ -23,7 +23,6 @@ const UserProfile = () => {
     fetch(`${BASE_URL_USERS}/${userId}?${DEFAULT_PARAMS_USERS}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(">>> userData", data);
         setUserData(data.items[0]);
       })
       .catch((error) => console.error(error));
@@ -75,14 +74,12 @@ const UserProfile = () => {
         </div>
       </div>
       <div className={styles.profileContent}>
-        <div className={styles.profileLeftContent}>
+        <div className={styles.topContent}>
           <Stats />
-          <Communities />
-        </div>
-        <div className={styles.profileRightContent}>
           <Badges />
+        </div>
+        <div className={styles.bottomContent}>
           <Tags />
-          <Answers />
         </div>
       </div>
     </section>

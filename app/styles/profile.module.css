@@ -13,7 +13,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  height: 200px;
+  min-height: 200px;
   width: 100%;
 }
 
@@ -42,23 +42,33 @@
 .profileContent {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   gap: 20px;
   height: fit-content;
   width: 100%;
 }
 
-.profileLeftContent,
-.profileRightContent {
+.topContent,
+.bottomContent {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
   height: fit-content;
+  width: 100%;
 }
 
-.profileLeftContent {
-  width: 20%;
+@media (max-width: 800px) {
+  .profileDescription {
+    justify-content: center;
+  }
+
+  .profilePage {
+    padding: 20px 60px;
+  }
 }
 
-.profileRightContent {
-  width: 80%;
+@media (max-width: 500px) {
+  .profilePage {
+    padding: 20px 20px;
+  }
 }
