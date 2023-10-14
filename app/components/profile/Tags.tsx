@@ -30,7 +30,8 @@ export const Tags = () => {
   }, [userId]);
 
   const tagsToRender = useMemo(() => {
-    return tags?.slice(0, 5);
+    const filteredTags = tags?.filter((tag) => !(tag.answer_count === 0 && tag.answer_score === 0));
+    return filteredTags?.slice(0, 5);
   }, [tags]);
 
   return (
@@ -54,7 +55,7 @@ export const Tags = () => {
                     <h3 className={styles.tagDataName}>posts</h3>
                   </div>
                 )}
-                {tag.question_count != null && tag.answer_count != null && (
+                {tag.question_count != null && tag.question_count !== 0 && tag.answer_count != null && (
                   <div className={styles.tagData}>
                     <h3 className={styles.tagDataNumber}>{Math.round((tag.answer_count / tag.question_count) * 100)}</h3>
                     <h3 className={styles.tagDataName}>posts %</h3>
