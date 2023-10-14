@@ -10,6 +10,9 @@
 
 .profileDescription {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
   height: 200px;
   width: 100%;
 }
@@ -19,11 +22,21 @@
   width: 150px;
 }
 
-.profileName {
+.profileData {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.profileName {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.accountBirthday {
+  display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 .profileContent {
