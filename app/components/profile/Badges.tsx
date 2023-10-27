@@ -1,4 +1,5 @@
-import { BadgeBox, BadgeType } from "./BadgeBox";
+import { BadgeType } from "@/app/types";
+import { BadgeBox } from "./BadgeBox";
 import styles from "./Badges.module.css";
 
 export const Badges = () => {
