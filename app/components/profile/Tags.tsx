@@ -18,12 +18,9 @@ export const Tags = () => {
   const [tags, setTags] = useState<TagsData[]>([]);
 
   useEffect(() => {
-    console.log(">>>", `${BASE_URL_USERS}/${userId}/answers?${DEFAULT_PARAMS_USERS}`);
-
     fetch(`${BASE_URL_USERS}/${userId}/top-tags?${DEFAULT_PARAMS_USERS}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(">>>", data);
         setTags(data.items);
       })
       .catch((error) => console.error(error));

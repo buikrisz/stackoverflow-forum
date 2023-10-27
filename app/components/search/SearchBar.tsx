@@ -22,8 +22,6 @@ export const SearchBar = () => {
       fetch(`${BASE_URL_SEARCH}?${searchParams}&${DEFAULT_PARAMS_SEARCH}&${additionalParams}`)
         .then((res) => res.json())
         .then((data) => {
-          console.log(">>>", data);
-
           setSearchedTerm(searchText);
           setItems(data?.items ?? []);
         })
