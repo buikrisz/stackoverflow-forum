@@ -6,13 +6,7 @@ import { FaBirthdayCake } from "react-icons/fa";
 import styles from "@/app/styles/profile.module.css";
 import "../../app/styles/globals.css";
 import Image from "next/image";
-
-export type AccountAgeProps = { years?: number; months?: number };
-export type UserData = {
-  display_name?: string;
-  creation_date?: Date;
-  profile_image?: string;
-};
+import { AccountAgeProps, UserData } from "@/app/types";
 
 const UserProfile = () => {
   const router = useRouter();

@@ -2,14 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
 import { BASE_URL_USERS, DEFAULT_PARAMS_USERS } from "@/app/constants/api";
 import styles from "./Tags.module.css";
-
-export type TagsData = {
-  tag_name: string;
-  answer_count: number;
-  answer_score: number;
-  question_count: number;
-  question_score: number;
-};
+import { TagsData } from "@/app/types";
 
 export const Tags = () => {
   const router = useRouter();

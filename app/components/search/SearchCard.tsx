@@ -1,6 +1,6 @@
-import { FC, useCallback, useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import { MdOutlineDone } from "react-icons/md";
-import { SearchCardProps } from "../../types/SearchContext.types";
+import { SearchCardProps } from "@/app/types";
 import styles from "./SearchCard.module.css";
 import { useRouter } from "next/router";
 import Image from "next/image";

@@ -5,42 +5,9 @@ import gold_medal from "../../assets/gold.png";
 import silver_medal from "../../assets/silver.png";
 import bronze_medal from "../../assets/bronze.png";
 import { BsDot } from "react-icons/bs";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import styles from "./Badges.module.css";
-
-export enum BadgeType {
-  Gold = 1,
-  Silver,
-  Bronze,
-}
-
-export type BadgeBoxProps = {
-  type: BadgeType;
-};
-
-type User = {
-  account_id: number;
-  display_name: string;
-  link: string;
-  profile_image: string;
-  reputation: number;
-  user_id: number;
-  user_type: string;
-};
-
-export type BadgeData = {
-  award_count: number;
-  badge_id: number;
-  link: string;
-  name: string;
-  rank: string;
-  user: User;
-};
-
-export type Medal = {
-  type: BadgeType;
-  image: StaticImageData;
-};
+import { BadgeBoxProps, BadgeData, BadgeType, Medal } from "@/app/types";
 
 export const BadgeBox = (props: BadgeBoxProps) => {
   const { type } = props;
