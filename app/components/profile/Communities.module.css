@@ -1,0 +1,45 @@
+.communitiesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 250px;
+  width: fit-content;
+}
+
+.title {
+  font-size: 22px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 0px 20px;
+  height: 100%;
+  width: 300px;
+  border: 1px solid var(--primary-text-color);
+  border-radius: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.link {
+  width: 200px;
+  color: #0563c1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+  .communitiesSection {
+    width: 100%;
+    align-items: center;
+  }
+}

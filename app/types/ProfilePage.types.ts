@@ -64,3 +64,10 @@ export type StatsProps = {
   badge_counts?: BadgeCounts;
   accept_rate?: number;
 };
+
+export type Community = {
+  site_name: string;
+  site_url: string;
+  reputation: number;
+  account_id: number;
+};

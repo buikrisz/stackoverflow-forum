@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
-import { Badges, Stats, Tags } from "@/app/components/profile";
+import { Badges, Communities, Stats, Tags } from "@/app/components/profile";
 import { BASE_URL_USERS, DEFAULT_PARAMS_USERS } from "@/app/constants/api";
 import { FaBirthdayCake } from "react-icons/fa";
 import styles from "@/app/styles/profile.module.css";
@@ -73,6 +73,7 @@ const UserProfile = () => {
           <Badges />
         </div>
         <div className={styles.bottomContent}>
+          <Communities />
           <Tags />
         </div>
       </div>

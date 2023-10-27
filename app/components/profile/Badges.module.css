@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 10px;
   min-height: 250px;
+  width: 60%;
 }
 
 .title {
@@ -12,6 +13,7 @@
 .content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 20px;
   height: 100%;
 }
