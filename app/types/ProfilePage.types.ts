@@ -44,8 +44,23 @@ export type TagsData = {
 
 export type AccountAgeProps = { years?: number; months?: number };
 
+type BadgeCounts = {
+  bronze: number;
+  silver: number;
+  gold: number;
+};
+
 export type UserData = {
   display_name?: string;
   creation_date?: Date;
   profile_image?: string;
+  reputation?: number;
+  badge_counts?: BadgeCounts;
+  accept_rate?: number;
+};
+
+export type StatsProps = {
+  reputation?: number;
+  badge_counts?: BadgeCounts;
+  accept_rate?: number;
 };

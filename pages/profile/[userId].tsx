@@ -69,7 +69,7 @@ const UserProfile = () => {
       </div>
       <div className={styles.profileContent}>
         <div className={styles.topContent}>
-          <Stats />
+          <Stats reputation={userData?.reputation} badge_counts={userData?.badge_counts} accept_rate={userData?.accept_rate} />
           <Badges />
         </div>
         <div className={styles.bottomContent}>

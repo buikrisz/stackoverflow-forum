@@ -56,6 +56,7 @@ export const BadgeBox = (props: BadgeBoxProps) => {
   };
 
   const relevantBadges = useMemo(() => badges?.filter((badge) => badge.rank === getBadgeName(type)) ?? [], [badges, type]);
+  const relevantBadgeCount = useMemo(() => relevantBadges?.reduce((total, currentValue) => total + currentValue.award_count, 0), [relevantBadges]);
 
   const topBadges = relevantBadges.slice(0, 3);
 
@@ -64,7 +65,7 @@ export const BadgeBox = (props: BadgeBoxProps) => {
       <div className={styles.badgeDescription}>
         <Image src={medalImage != null ? medalImage.image : bronze_medal} alt={`${getBadgeName(type)} badge`} className={styles.icon} />
         <div className={styles.badgeCount}>
-          <h4>{relevantBadges.length}</h4>
+          <h4>{relevantBadgeCount}</h4>
           <h5>
             {`${getBadgeName(type)}`} badge{relevantBadges?.length === 1 ? "" : "s"}
           </h5>
